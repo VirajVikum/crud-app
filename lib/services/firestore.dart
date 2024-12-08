@@ -31,4 +31,10 @@ Future<void> updateNote(String docID, String newNote) {
   });
 }
 
+// DELETE
+
+Future<void> deleteNote(String docID) {
+  return notes.doc(docID).delete();
+}
+
 }

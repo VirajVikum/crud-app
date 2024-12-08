@@ -83,10 +83,23 @@ final TextEditingController textController = TextEditingController();
 
             return ListTile(
               title: Text(noteText),
-              trailing: IconButton(
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // update button
+                  IconButton(
                 onPressed: () => openNoteBox(docID: docID),
                icon: const Icon(Icons.settings),
                ),
+
+              //  delete button
+              IconButton(
+                onPressed: () => firestoreService.deleteNote(docID),
+               icon: const Icon(Icons.delete),
+               ),
+                ],
+              )
+               
             );
 
           },
